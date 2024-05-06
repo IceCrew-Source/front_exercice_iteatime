@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> AdonisJS - A fully featured web framework for Node.js </title>
+
+  @vite(['resources/css/app.scss', 'resources/js/app.js'])
+</head>
+<body>
+  <div id="header">
+    <div id="logo"></div>
+    <div id="social_networks">
+      <div id="mail"></div>
+      <div id="facebook">
+        {{--  @svg('ph:newspaper-clipping-fill')
+        @svg('ph:facebook-logo-fill')  --}}
+      </div>
+      <div id="linkedin"></div>
+      <div id="twitter"></div>
+      <div id="idk"></div>
+      <div id="youtube"></div>
+    </div>
+  </div>
+
+  <div id="header2">
+    <img class="background_image" />
+    <div id="navbar">
+      <div id="tab1" class="tab">Tab 1</div>
+      <div id="tab2" class="tab">Tab 2</div>
+      <div id="tab3" class="tab">Tab 3</div>
+      <div id="tab4" class="tab">Tab 4</div>
+      <div id="search"></div>
+    </div>
+    <div id="background_title">
+      <span>Le premier site</span>
+      <span>De jeux de sociétés</span>
+    </div>
+  </div>
+
+  <div id="spotlight">
+    <div class="section_header">
+      <div class="title">A LA UNE</div>
+      <div class="separator"></div>
+    </div>
+    <div class="item">
+      <div class="image">
+        <div class="background_image"></div>
+        <div class="description">
+          <div class="date">22 Juillet 2016</div>
+          <div class="title">EXPO<br>JEUX<br>LYON</div>
+        </div>
+      </div>
+      <div class="content">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque ex mi, sit amet euismod arcu gravida eget. In tempor orci a pulvinar varius. Suspendisse a consequat tellus. Sed lectus lectus, molestie fringilla tempor at, facilisis sed purus. Aliquam eleifend nibh consectetur purus pulvinar fermentum. Nulla quis volutpat tortor. Phasellus egestas lectus eu massa varius sagittis. Duis sit amet lorem id metus sodales luctus ac sed elit.
+        Quisque elementum rhoncus nisi, at ullamcorper odio vestibulum ut. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sollicitudin et sapien et pulvinar. Aliquam vel tristique leo, a iaculis metus. Fusce erat nibh, imperdiet in consequat vestibulum, dictum non elit. Cras vestibulum elit vitae dictum vulputate. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec hendrerit neque ac leo scelerisque, in lacinia dolor scelerisque. Nam diam tortor, aliquet tristique nunc eget, efficitur placerat ipsum. Praesent vel tempus orci. Quisque eleifend placerat tellus, in porta nisl scelerisque et.
+        Fusce nulla nibh, pulvinar eu risus in, ornare ornare nunc. Phasellus tempus mi et urna dictum gravida. Vivamus maximus nec velit at egestas. Sed ultrices dictum ex ac laoreet. Duis vitae ultrices nunc. Sed pretium nunc nisl, sit amet accumsan augue volutpat eu. Quisque lobortis luctus nulla, non ultricies orci suscipit sed. Curabitur id fermentum neque. Ut eu porta quam, et auctor turpis. Fusce ante nunc, blandit in feugiat vel, aliquam sit amet nisi. Etiam in lectus porttitor, ultricies sem id, interdum ante. Morbi imperdiet dictum lorem. Phasellus pharetra diam eu faucibus congue. Morbi nec nisi non odio sodales malesuada at a ex. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="paralax"></div>
+
+  <div id="news">
+    <div class="section_header">
+      <div class="title">ACTUALITES</div>
+      <div class="separator"></div>
+    </div>
+    <div class="item_group">
+      <div class="item">
+        <div class="image" id="first"></div>
+        <div class="tag_group">
+          <div class="tags">29/07/2023</div>
+          <div class="tags">ACTUALITES</div>
+        </div>
+        <div class="title">LANCEMENT DU PRIX "AS D'OR" DE L'ANNEE</div>
+        <div class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque ex mi, sit amet euismod arcu gravida eget. In tempor orci a pulvinar varius. Suspendisse a consequat tellus. Sed lectus lectus, molestie fringilla tempor at, facilisis sed purus. Aliquam eleifend nibh consectetur purus pulvinar fermentum. Nulla quis volutpat tortor. Phasellus egestas lectus eu massa varius sagittis. Duis sit amet lorem id metus sodales luctus ac sed elit</div>
+        <div class="button">LIRE PLUS</div>
+      </div>
+      <div class="item">
+        <div class="image" id="second"></div>
+        <div class="tag_group">
+          <div class="tags">18/02/2024</div>
+          <div class="tags">ACTUALITES</div>
+        </div>
+        <div class="title">GROS SUCCES POUR "CASCADIA"</div>
+        <div class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque ex mi, sit amet euismod arcu gravida eget. In tempor orci a pulvinar varius. Suspendisse a consequat tellus. Sed lectus lectus, molestie fringilla tempor at, facilisis sed purus. Aliquam eleifend nibh consectetur purus pulvinar fermentum. Nulla quis volutpat tortor. Phasellus egestas lectus eu massa varius sagittis. Duis sit amet lorem id metus sodales luctus ac sed elit</div>
+        <div class="button">LIRE PLUS</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="brands">
+    <div class="section_header">
+      <div class="title">LES JEUX DE SOCIETE</div>
+      <div class="separator"></div>
+    </div>
+    <div class="hexagones">
+      <div class="hexagone" id="boardgame1"></div>
+      <div class="hexagone" id="boardgame2"></div>
+      <div class="hexagone" id="boardgame3"></div>
+      <div class="hexagone" id="boardgame4"></div>
+      <div class="hexagone" id="boardgame5"></div>
+      <div class="hexagone" id="boardgame6"></div>
+      <div class="hexagone" id="boardgame7"></div>
+      <div class="hexagone" id="boardgame8"></div>
+      <div class="hexagone" id="boardgame9"></div>
+    </div>
+  </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</body>
+</html>
