@@ -11,26 +11,41 @@
   <div id="header">
     <div id="logo"></div>
     <div id="social_networks">
-      <div id="mail"></div>
+      <div id="mail">
+        @svg('ph:mailbox-fill')
+        Contactez-nous
+      </div>
       <div id="facebook">
-        @svg('ph:newspaper-clipping-fill')
         @svg('ph:facebook-logo-fill')
       </div>
-      <div id="linkedin"></div>
-      <div id="twitter"></div>
-      <div id="idk"></div>
-      <div id="youtube"></div>
+      <div id="linkedin">
+        @svg('ph:linkedin-logo-fill')
+      </div>
+      <div id="twitter">
+        @svg('ph:twitter-logo-fill')
+      </div>
+      <div id="tumblr">
+        @svg('ph:tumblr-logo-fill')
+      </div>
+      <div id="youtube">
+        @svg('ph:youtube-logo-fill')
+      </div>        
     </div>
   </div>
 
   <div id="header2">
     <img class="background_image" />
-    <div id="navbar">
-      <div id="tab1" class="tab">Tab 1</div>
-      <div id="tab2" class="tab">Tab 2</div>
-      <div id="tab3" class="tab">Tab 3</div>
-      <div id="tab4" class="tab">Tab 4</div>
-      <div id="search"></div>
+    <div id="navbar_background">
+      <div id="navbar">
+        <div id="tab1" class="tab active">Introduction</div>
+        <div id="tab2" class="tab">Boutique</div>
+        <div id="tab3" class="tab">Partenaires</div>
+        <div id="tab4" class="tab">L'équipe</div>
+        <div id="searchbar">
+          <input type="text">
+          @svg('ph:magnifying-glass-bold')
+        </div>
+      </div>
     </div>
     <div id="background_title">
       <span>Le premier site</span>
@@ -40,7 +55,7 @@
 
   <div id="spotlight">
     <div class="section_header">
-      <div class="title">A LA UNE</div>
+      <div class="title">à la une</div>
       <div class="separator"></div>
     </div>
     <div class="item">
@@ -48,7 +63,7 @@
         <div class="background_image"></div>
         <div class="description">
           <div class="date">22 Juillet 2016</div>
-          <div class="title">EXPO<br>JEUX<br>LYON</div>
+          <div class="title">expo<br>jeux<br>lyon</div>
         </div>
       </div>
       <div class="content">
@@ -63,7 +78,7 @@
 
   <div id="news">
     <div class="section_header">
-      <div class="title">ACTUALITES</div>
+      <div class="title">actualités</div>
       <div class="separator"></div>
     </div>
     <div class="item_group">
@@ -71,81 +86,229 @@
         <div class="image" id="first"></div>
         <div class="tag_group">
           <div class="tags">29/07/2023</div>
-          <div class="tags">ACTUALITES</div>
+          <div class="tags">actualités</div>
         </div>
-        <div class="title">LANCEMENT DU PRIX "AS D'OR" DE L'ANNEE</div>
+        <div class="title">Lancement du prix "as d'or" de l'année</div>
         <div class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque ex mi, sit amet euismod arcu gravida eget. In tempor orci a pulvinar varius. Suspendisse a consequat tellus. Sed lectus lectus, molestie fringilla tempor at, facilisis sed purus. Aliquam eleifend nibh consectetur purus pulvinar fermentum. Nulla quis volutpat tortor. Phasellus egestas lectus eu massa varius sagittis. Duis sit amet lorem id metus sodales luctus ac sed elit</div>
-        <div class="button">LIRE PLUS</div>
+        <button type="button">lire plus</button>
       </div>
       <div class="item">
         <div class="image" id="second"></div>
         <div class="tag_group">
           <div class="tags">18/02/2024</div>
-          <div class="tags">ACTUALITES</div>
+          <div class="tags">actualités</div>
         </div>
-        <div class="title">GROS SUCCES POUR "CASCADIA"</div>
+        <div class="title">gros succes pour "cascadia"</div>
         <div class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque ex mi, sit amet euismod arcu gravida eget. In tempor orci a pulvinar varius. Suspendisse a consequat tellus. Sed lectus lectus, molestie fringilla tempor at, facilisis sed purus. Aliquam eleifend nibh consectetur purus pulvinar fermentum. Nulla quis volutpat tortor. Phasellus egestas lectus eu massa varius sagittis. Duis sit amet lorem id metus sodales luctus ac sed elit</div>
-        <div class="button">LIRE PLUS</div>
+        <button type="button">lire plus</button>
       </div>
     </div>
   </div>
 
   <div id="brands">
     <div class="section_header">
-      <div class="title">LES JEUX DE SOCIETE</div>
+      <div class="title">les jeux de sociétés</div>
       <div class="separator"></div>
     </div>
-    <div class="hexagones">
-      <div class="hexagone" id="boardgame1"></div>
-      <div class="hexagone" id="boardgame2"></div>
-      <div class="hexagone" id="boardgame3"></div>
-      <div class="hexagone" id="boardgame4"></div>
-      <div class="hexagone" id="boardgame5"></div>
-      <div class="hexagone" id="boardgame6"></div>
-      <div class="hexagone" id="boardgame7"></div>
-      <div class="hexagone" id="boardgame8"></div>
-      <div class="hexagone" id="boardgame9"></div>
+    <div class="hexagoneu">
+      <div class="hexagones">
+        <div class="hexagone" id="boardgame1">
+          <div class="hover_hex">
+            <div class="content">
+              <div class="title">abraca</div>
+              <div class="divider"></div>
+              <div class="description">Jeux de coopération</div>
+            </div>
+            <div class="background"></div>
+          </div>
+        </div>
+        <div class="hexagone" id="boardgame2">
+          <div class="hover_hex">
+            <div class="content">
+              <div class="title">goudurox</div>
+              <div class="divider"></div>
+              <div class="description">Jeux de survie</div>
+            </div>
+            <div class="background"></div>
+          </div>
+        </div>
+        <div class="hexagone" id="boardgame3">
+          <div class="hover_hex">
+            <div class="content">
+              <div class="title">track</div>
+              <div class="divider"></div>
+              <div class="description">Jeux de cartes</div>
+            </div>
+            <div class="background"></div>
+          </div>
+        </div>
+        <div class="hexagone" id="boardgame4">
+          <div class="hover_hex">
+            <div class="content">
+              <div class="title">sabra</div>
+              <div class="divider"></div>
+              <div class="description">Deck building</div>
+            </div>
+            <div class="background"></div>
+          </div>
+        </div>
+        <div class="hexagone" id="boardgame5">
+          <div class="hover_hex">
+            <div class="content">
+              <div class="title">miroir</div>
+              <div class="divider"></div>
+              <div class="description">Coopération</div>
+            </div>
+            <div class="background"></div>
+          </div>
+        </div>
+        <div class="hexagone" id="boardgame6">
+          <div class="hover_hex">
+            <div class="content">
+              <div class="title">virolt</div>
+              <div class="divider"></div>
+              <div class="description">Jeu de stratégie</div>
+            </div>
+            <div class="background"></div>
+          </div>
+        </div>
+        <div class="hexagone" id="boardgame7">
+          <div class="hover_hex">
+            <div class="content">
+              <div class="title">partis</div>
+              <div class="divider"></div>
+              <div class="description">Deck building</div>
+            </div>
+            <div class="background"></div>
+          </div>
+        </div>
+        <div class="hexagone" id="boardgame8">
+          <div class="hover_hex">
+            <div class="content">
+              <div class="title">prolis</div>
+              <div class="divider"></div>
+              <div class="description">Party game</div>
+            </div>
+            <div class="background"></div>
+          </div>
+        </div>
+        <div class="hexagone" id="boardgame9">
+          <div class="hover_hex">
+            <div class="content">
+              <div class="title">noira</div>
+              <div class="divider"></div>
+              <div class="description">Jeu de cartes</div>
+            </div>
+            <div class="background"></div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+
+  <div id="other">
+    <div id="documentation">
+      <div class="title">documentation</div>
+      <div id="item_list">
+        <div class="item">
+          <div class="icon">
+            @svg('ph:file-arrow-down-fill')
+          </div>
+          <div class="name">telechargez le livret de règles</div>
+        </div>
+        <div class="item">
+          <div class="icon">
+            @svg('ph:file-arrow-down-fill')
+          </div>
+          <div class="name">téléchargez la liste de nos magasins partenaires</div>
+        </div>
+      </div>
+    </div>
+    <div id="newsletter">
+      <div class="title">newsletter</div>
+      <div id="form">
+        <input type="email" id="mail" name="mail" placeholder="EMAIL">
+        <div class="personnal_info">
+          <input type="text" id="lname" name="lastname" placeholder="NOM">
+          <input type="text" id="firstname" name="firstname" placeholder="PRENOM">
+        </div>
+      </div>
+      <button type="button">s'inscrire</button>
+    </div>
+  </div>
+
+  <div id="social_networks_footer">
+    <div class="social_network">
+      <div class="icon">
+        @svg('ph:facebook-logo-fill')
+      </div>
+      <div class="name">Facebook</div>
+    </div>
+    <div class="social_network">
+      <div class="icon">
+        @svg('ph:twitter-logo-fill')
+      </div>
+      <div class="name">Twitter</div>
+    </div>
+    <div class="social_network">
+      <div class="icon">
+        @svg('ph:linkedin-logo-fill')
+      </div>
+      <div class="name">Linkedin</div>
+    </div>
+    <div class="social_network">
+      <div class="icon">
+        @svg('ph:youtube-logo-fill')
+      </div>
+      <div class="name">Youtube</div>
+    </div>
+    <div class="social_network">
+      <div class="icon">
+        @svg('ph:tumblr-logo-fill')
+      </div>
+      <div class="name">Tumblr</div>
+    </div>
+  </div>
+
+  <div id="footer">
+    <div class="section_list">
+      <div class="section">
+        <div class="title">Soutenez les jeux de société</div>
+        <div class="button">
+          <button type="button">faire un don</button>
+        </div>
+      </div>
+      <div class="section">
+        <div class="title_content">
+          <div class="title">initiative portée par :</div>
+          <div class="divider"></div>
+        </div>
+        <div class="logo"></div>
+      </div>
+      <div class="section">
+        <div class="title_content">
+          <div class="title">rubriques</div>
+          <div class="divider"></div>
+        </div>
+        <div class="links">
+          <div class="link">La gamme expert</div>
+          <div class="link">La gamme famille</div>
+          <div class="link">La gamme enfant</div>
+          <div class="link">La gamme duo</div>
+          <div class="link">Autre</div>
+        </div>
+      </div>
+      <div class="section">
+        <div class="title_content">
+          <div class="title">youtube</div>
+          <div class="divider"></div>
+        </div>
+        <div class="thumbnails">
+          <div id="youtubeur1" class="thumbnail"></div>
+          <div id="youtubeur2" class="thumbnail"></div>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

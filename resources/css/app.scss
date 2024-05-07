@@ -1,27 +1,90 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: lemonMilkContent;
 }
 
 @font-face {
-    font-family: lemonMilk;
+    font-family: lemonMilkTitle;
+    src: url(C:/Projects/front_exercice_iteatime/resources/assets/LEMONMILK-Regular.otf);
+}
+
+@font-face {
+    font-family: lemonMilkContent;
     src: url(C:/Projects/front_exercice_iteatime/resources/assets/LEMONMILK-Light.otf);
 }
+
 
 body {
     display: flex;
     flex-direction: column;
 }
 
-#logo {
-    width: 100px;
-    height: 100px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-image: url('../assets/logo.png')
-}
+#header {
+    width: 60vw;
+    margin: 0 20vw 0 20vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
+    #logo {
+        width: 150px;
+        height: 55px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        margin: 20px 0 20px 0;
+        background-image: url('../assets/logo.png')
+    }
+
+    #social_networks {
+        display: flex;
+        align-items: center;
+
+        div {
+            font-size: 2rem;
+        }
+
+        #mail {
+            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-right: 30px;
+            cursor: pointer;
+            color: #929292;
+
+            svg {
+                font-size: 2rem;
+            }
+        }
+
+        #facebook {
+            color: #93D7CC;
+            cursor: pointer;
+        }
+
+        #linkedin {
+            color: #1CC4A1;
+            cursor: pointer;
+        }
+
+        #twitter {
+            color: #0E9FA2;
+            cursor: pointer;
+        }
+
+        #tumblr {
+            color: #1C7DA7;
+            cursor: pointer;
+        }
+
+        #youtube {
+            color: #21616B;
+            cursor: pointer;
+        }
+    }
+}
 
 #header2 {
     position: relative;
@@ -39,19 +102,49 @@ body {
         background-image: url('../assets/header_background.png')
     }
 
-    #navbar {
-        position: absolute;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
+    #navbar_background {
         width: 100%;
-        height: 8%;
+        position: absolute;
         background-color: #d3d3d3b9;
-        padding: 10px 0 10px 0;
 
-        .tab {
-            color: white;
-            cursor: pointer;
+        #navbar {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 60%;
+            margin: 0 20vw 0 20vw;
+            height: 8%;
+            padding: 10px 0 10px 0;
+
+            .tab {
+                color: white;
+                cursor: pointer;
+                user-select: none;
+
+                &.active {
+                    color: #1AC5A1;
+                    border-left: solid 5px #1AC5A1;
+                    padding-left: 10px;
+                }
+            }
+
+            #searchbar {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: white;
+                border-radius: 5px;
+
+                input {
+                    border: none;
+                    margin-left: 15px;
+                }
+
+                svg {
+                    font-size: 1.2rem;
+                    padding: 5px;
+                }
+            }
         }
     }
 
@@ -66,7 +159,7 @@ body {
         font-size: 3rem;
         bottom: 0;
         color: white;
-        font-family: lemonMilk;
+        font-family: lemonMilkTitle;
 
         span:first-child {
             font-weight: bold;
@@ -94,7 +187,7 @@ body {
             background-color: #1AC5A1;
             width: 150px;
             padding: 10px 0 10px 0;
-            font-family: lemonMilk;
+            font-family: lemonMilkTitle;
         }
 
         .separator {
@@ -136,6 +229,7 @@ body {
                 justify-content: space-around;
                 height: 100%;
                 color: white;
+                user-select: none;
 
                 .date {
                     background-color: #1AC5A1;
@@ -145,7 +239,7 @@ body {
 
                 .title {
                     font-size: 2rem;
-                    font-family: lemonMilk;
+                    font-family: lemonMilkTitle;
                 }
             }
         }
@@ -155,6 +249,7 @@ body {
             height: 100%;
             overflow: hidden;
             text-align: justify;
+            font-size: 0.8rem;
         }
     }
 }
@@ -190,7 +285,7 @@ body {
             background-color: #1AC5A1;
             width: 150px;
             padding: 10px 0 10px 0;
-            font-family: lemonMilk;
+            font-family: lemonMilkTitle;
         }
 
         .separator {
@@ -238,27 +333,34 @@ body {
                     background-color: #C9C9C9;
                     color: white;
                     padding: 10px;
-                    font-family: lemonMilk;
+                    font-family: lemonMilkTitle;
                     font-size: 0.8rem;
                 }
             }
 
             .title {
-                font-family: lemonMilk;
+                font-family: lemonMilkTitle;
                 margin-bottom: 10px;
             }
 
             .description {
                 margin-bottom: 20px;
+                font-size: 0.8rem;
             }
 
-            .button {
+            button {
                 width: fit-content;
                 padding: 8px;
                 border: solid 2px #1AC5A1;
                 color: #1AC5A1;
                 cursor: pointer;
-                font-family: lemonMilk;
+                font-family: lemonMilkTitle;
+                background-color: transparent;
+
+                &:hover {
+                    color: white;
+                    background-color: #1AC5A1;
+                }
             }
         }
     }
@@ -285,7 +387,8 @@ body {
             background-color: #1AC5A1;
             width: 250px;
             padding: 10px 0 10px 0;
-            font-family: lemonMilk;
+            font-family: lemonMilkTitle;
+            text-align: center;
         }
 
         .separator {
@@ -297,79 +400,374 @@ body {
         }
     }
 
-    .hexagones {
-        margin: auto;
-        margin-top: 50px;
-        width: 980px;
-        display: grid;
-        grid-template-columns: repeat(8, 1fr);
-        grid-auto-rows: 164px;
-        padding-bottom: 50px;
-    }
-    
-    .hexagone {
+    .hexagoneu {
         display: flex;
-        position: relative;
-        width: 190px;
-        height: 210px;
-        background-color: #424242;
-        clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-    }
-    
-    .hexagone:first-child {
-        grid-row-start: 1;
-        grid-column: 1 / span 2;
-        background-image: url('../assets/boardgame1.png');
-    }
-    
-    .hexagone:nth-child(2) {
-        grid-row-start: 1;
-        grid-column: 3 / span 2;
-        background-image: url('../assets/boardgame2.png');
-    }
-    
-    .hexagone:nth-child(3) {
-        grid-row-start: 1;
-        grid-column: 5 / span 2;
-        background-image: url('../assets/boardgame3.png');
-    }
-    
-    .hexagone:nth-child(4) {
-        grid-row-start: 1;
-        grid-column: 7 / span 2;
-        background-image: url('../assets/boardgame4.png');
-    }
-    
-    .hexagone:nth-child(5) {
-        grid-row-start: 1;
-        grid-column: 9 / span 2;
-        background-image: url('../assets/boardgame5.png');
-    }
-    
-    .hexagone:nth-child(6) {
-        grid-row-start: 2;
-        grid-column: 2 / span 2;
-        background-image: url('../assets/boardgame6.png');
-    }
-    
-    .hexagone:nth-child(7) {
-        grid-row-start: 2;
-        grid-column: 4 / span 2;
-        background-image: url('../assets/boardgame7.png');
-    }
-    
-    .hexagone:nth-child(8) {
-        grid-row-start: 2;
-        grid-column: 6 / span 2;
-        background-image: url('../assets/boardgame8.png');
-    }
-    
-    .hexagone:nth-child(9) {
-        grid-row-start: 2;
-        grid-column: 8 / span 2;
-        background-image: url('../assets/boardgame9.png');
+        --s: 190px;  /* size  */
+        --m: 4px;    /* margin */
+        --f: calc(1.732 * var(--s) + 4 * var(--m)  - 1px);
+        width: 60vw;
+        margin-top: 50px;
+        padding-bottom: 50px;
+
+        .hexagones {
+            font-size: 0;
+
+            &::before {
+                content: "";
+                width: calc(var(--s)/2 + var(--m));
+                float: left;
+                height: 120%;
+                shape-outside: repeating-linear-gradient(     
+                                #0000 0 calc(var(--f) - 3px),      
+                                #000  0 var(--f));
+            }  
+
+            .hexagone {
+                user-select: none;
+                width: var(--s);
+                margin: var(--m);
+                height: calc(var(--s)*1.1547); 
+                display: inline-block;
+                font-size:initial;
+                clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%);
+                margin-bottom: calc(var(--m) - var(--s)*0.2885); 
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+                cursor: pointer;            
+
+                .hover_hex {
+                    display: none;
+                }
+
+                &:hover {
+                    .hover_hex {
+                        display: block;
+                        color: white;
+                        width: 100%;
+                        height: 100%;
+                        position: relative;
+            
+                        .content {
+                            position: absolute;
+                            width: 80%;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-evenly;
+                            align-items: center;
+                            gap: 1rem;
+                            top: 50%;
+                            transform: translate(-50%, -50%);
+                            left: 50%;
+
+                            .divider {
+                                height: 3px;
+                                background-color: white;
+                                width: 100%;
+                                margin: 0 30px 0 30px;
+                            }
+
+                            .description, .title {
+                                text-align: center;
+                            }
+                        }
+            
+                        .background {
+                            background-color: #1AC5A1;
+                            width: 100%;
+                            height: 100%;
+                            opacity: 0.5;
+                            position: absolute;
+                            z-index: -1;
+                        }
+                    }
+                }
+            }
+            
+            .hexagone:first-child {
+                background-image: url('../assets/boardgame1.png');
+            }
+            
+            .hexagone:nth-child(2) {
+                background-image: url('../assets/boardgame2.png');
+            }
+            
+            .hexagone:nth-child(3) {
+                background-image: url('../assets/boardgame3.png');
+            }
+            
+            .hexagone:nth-child(4) {
+                background-image: url('../assets/boardgame4.png');
+            }
+            
+            .hexagone:nth-child(5) {
+                background-image: url('../assets/boardgame5.png');
+            }
+            
+            .hexagone:nth-child(6) {
+                background-image: url('../assets/boardgame6.png');
+            }
+            
+            .hexagone:nth-child(7) {
+                background-image: url('../assets/boardgame7.png');
+            }
+            
+            .hexagone:nth-child(8) {
+                background-image: url('../assets/boardgame8.png');
+            }
+            
+            .hexagone:nth-child(9) {
+                background-image: url('../assets/boardgame9.png');
+            }
+        }
     }
 }
+
+#other {
+    width: 60vw;
+    height: 20vh;
+    padding: 3vh 20vw 3vh 20vw;
+    background-color: #E2E2E2;
+    display: flex;
+    justify-content: space-between;
+
+    #documentation {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 70%;
+
+        .title {
+            background-color: #5EB4D7;
+            color: white;
+            width: 180px;
+            padding: 10px 0 10px 0;
+            font-family: lemonMilkTitle;
+            text-align: center;
+        }
+
+        #item_list {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+
+            .item {
+                display: flex;
+                gap: 1rem;
+                align-items: center;
+                cursor: pointer;
+
+                .icon {
+                    font-size: 3rem;
+                    color: #1AC5A1;
+                    display: flex;
+                }
+            }
+        }
+    }
+
+    #newsletter {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30%;
+        
+        .title {
+            background-color: #5EB4D7;
+            color: white;
+            width: 150px;
+            padding: 10px 0 10px 0;
+            font-family: lemonMilkTitle;
+            text-align: center;
+        }
+
+        #form {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            width: 100%;
+            gap: 0.5rem;
+
+            #mail {
+                background-color: white;
+                font-family: lemonMilkTitle;
+                padding: 10px 0 10px 10px;
+                border: none;
+            }
+
+            .personnal_info {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                gap: 0.5rem;
+
+                input {
+                    background-color: white;
+                    font-family: lemonMilkTitle;
+                    padding: 10px 0 10px 10px;
+                    width: 50%;
+                    border: none;
+                }
+            }
+        }
+
+        button {
+            background-color: transparent;
+            color: #1AC5A1;
+            border: solid 2px #1AC5A1;
+            padding: 10px 0 10px 0;
+            font-family: lemonMilkTitle;
+            text-align: center;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #1AC5A1;
+                color: #E2E2E2;
+            }
+        }
+    }
+}
+
+#social_networks_footer {
+    width: 60vw;
+    height: 10vh;
+    padding: 0 20vw 0 20vw;
+    background-color: #58B6D0;
+    display: flex;
+    justify-content: space-evenly;
+
+    .social_network {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        align-items: center;
+        color: white;
+        padding: 0 2.5% 0 2.5%;
+        height: 100%;
+        cursor: pointer;
+        user-select: none;
+
+        &:hover {
+            background-color: #3A9AB3;
+        }
+
+        .icon {
+            font-size: 2.5rem;
+            display: flex;
+            border: solid 1px white;
+            border-radius: 10px;
+            padding: 5px;
+        }
+    }
+}
+
+#footer {
+    width: 60vw;
+    height: 30vh;
+    padding: 0 20vw 0 20vw;
+    background-color: #343635;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+
+    .section_list {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        height: 64%;
+
+        .section {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            
+            .title {
+                font-family: lemonMilkTitle;
+            }
+
+            .title_content {
+                font-family: lemonMilkTitle;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .button {
+                height: 100%;
+                width: 80%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+
+                button {
+                    background-color: transparent;
+                    color: white;
+                    border: solid 1px white;
+                    padding: 10px;
+                    width: 100%;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: white;
+                        color: #343635;
+                    }
+                }
+            }
+
+            .thumbnails {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                gap: 1rem;
+
+                .thumbnail {               
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    width: 50%;
+                    height: 100%;
+                    cursor: pointer;
+
+                    &#youtubeur1 {
+                        background-image: url('../assets/youtubeur1.png');
+                    }
+
+                    &#youtubeur2 {
+                        background-image: url('../assets/youtubeur2.png');
+                    }
+                }
+            }
+
+            .divider {
+                width: 30px;
+                height: 3px;
+                background-color: #1AC5A1;
+                margin: 5px 0 20px 0;
+            }
+
+            .logo {
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+                width: 70%;
+                height: 100%;
+                background-image: url('../assets/logo2.png');
+            }
+
+            .links {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                font-size: 0.8rem;
+                gap: 0.8rem;
+                height: 100%;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
