@@ -1,3 +1,5 @@
+$small: 480px;
+
 * {
     margin: 0;
     padding: 0;
@@ -20,12 +22,56 @@ body {
     flex-direction: column;
 }
 
+#menu_items {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.911);
+    z-index: 1;
+    display: block;
+    transform: translateX(-100%);
+    position: fixed;
+
+    .items {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        height: 50%;
+        width: 50%;
+        margin: 25%;
+        list-style-type: none;
+        font-family: lemonMilkTitle;
+        font-weight: bold;
+        font-size: 1.5rem;
+        color: black;
+        position: sticky;
+    }
+}
+
 #header {
     width: 60vw;
     margin: 0 20vw 0 20vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @media (max-width: $small) {
+        margin: 0;
+        width: 85%;
+        margin-left: 50%;
+        transform: translateX(-50%);
+    }
+
+    #dropdown_icon {
+        display: none;
+        position: relative;
+        z-index: 10;
+    
+        @media (max-width: $small) {
+            display: block;
+        }
+    }
 
     #logo {
         width: 150px;
@@ -34,15 +80,23 @@ body {
         background-repeat: no-repeat;
         background-position: center;
         margin: 20px 0 20px 0;
-        background-image: url('../assets/logo.png')
+        background-image: url('../assets/logo.png');
+
+        @media (max-width: $small) {
+            width: 70px;
+            height: 25px;
+        }
     }
 
-    #social_networks {
+    #contacts {
         display: flex;
         align-items: center;
 
-        div {
-            font-size: 2rem;
+        @media (max-width: $small) {
+            font-size: 0.6rem;
+            flex-wrap: wrap;
+            justify-content: end;
+            width: 50%;
         }
 
         #mail {
@@ -54,34 +108,73 @@ body {
             cursor: pointer;
             color: #929292;
 
+            @media (max-width: $small) {
+                font-size: 0.6rem;
+                margin-right: 0;
+            }
+
             svg {
                 font-size: 2rem;
+
+                @media (max-width: $small) {
+                    font-size: 1.3rem;
+                }
             }
         }
 
-        #facebook {
-            color: #93D7CC;
-            cursor: pointer;
-        }
+        #social_networks {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
 
-        #linkedin {
-            color: #1CC4A1;
-            cursor: pointer;
-        }
+            div {
+                font-size: 2rem;
+            }
 
-        #twitter {
-            color: #0E9FA2;
-            cursor: pointer;
-        }
+            #facebook {
+                color: #93D7CC;
+                cursor: pointer;
 
-        #tumblr {
-            color: #1C7DA7;
-            cursor: pointer;
-        }
+                @media (max-width: $small) {
+                    font-size: 1.3rem;
+                }
+            }
 
-        #youtube {
-            color: #21616B;
-            cursor: pointer;
+            #linkedin {
+                color: #1CC4A1;
+                cursor: pointer;
+                
+                @media (max-width: $small) {
+                    font-size: 1.3rem;
+                }
+            }
+
+            #twitter {
+                color: #0E9FA2;
+                cursor: pointer;
+                
+                @media (max-width: $small) {
+                    font-size: 1.3rem;
+                }
+            }
+
+            #tumblr {
+                color: #1C7DA7;
+                cursor: pointer;
+                
+                @media (max-width: $small) {
+                    font-size: 1.3rem;
+                }
+            }
+
+            #youtube {
+                color: #21616B;
+                cursor: pointer;
+                
+                @media (max-width: $small) {
+                    font-size: 1.3rem;
+                }
+            }
         }
     }
 }
@@ -106,6 +199,11 @@ body {
         width: 100%;
         position: absolute;
         background-color: #d3d3d3b9;
+        display: block;
+
+        @media (max-width: $small) {
+            display: none;
+        }
 
         #navbar {
             display: flex;
@@ -161,6 +259,11 @@ body {
         color: white;
         font-family: lemonMilkTitle;
 
+        @media (max-width: $small) {
+            font-size: 1.3rem;
+            height: 100%;
+        }
+
         span:first-child {
             font-weight: bold;
         }
@@ -188,6 +291,11 @@ body {
             width: 150px;
             padding: 10px 0 10px 0;
             font-family: lemonMilkTitle;
+
+            @media (max-width: $small) {
+                font-size: 0.8rem;
+                
+            }
         }
 
         .separator {
@@ -206,10 +314,18 @@ body {
         justify-content: space-around;
         gap: 2vw;
 
+        @media (max-width: $small) {
+            flex-direction: column;
+        }
+
         .image {
             width: 50%;
             height: 100%;
             position: relative;
+
+            @media (max-width: $small) {
+                width: 100%;
+            }
 
             .background_image {
                 width: 100%;
@@ -235,11 +351,19 @@ body {
                     background-color: #1AC5A1;
                     width: fit-content;
                     padding: 5px 20px 5px 20px;
+
+                    @media (max-width: $small) {
+                        font-size: 0.6rem;
+                    }
                 }
 
                 .title {
                     font-size: 2rem;
                     font-family: lemonMilkTitle;
+
+                    @media (max-width: $small) {
+                        font-size: 1rem;
+                    }
                 }
             }
         }
@@ -250,6 +374,11 @@ body {
             overflow: hidden;
             text-align: justify;
             font-size: 0.8rem;
+
+            @media (max-width: $small) {
+                width: 100%;
+                font-size: 0.6rem;
+            }
         }
     }
 }
@@ -286,6 +415,10 @@ body {
             width: 150px;
             padding: 10px 0 10px 0;
             font-family: lemonMilkTitle;
+
+            @media (max-width: $small) {
+                font-size: 0.8rem;
+            }
         }
 
         .separator {
@@ -304,6 +437,12 @@ body {
         justify-content: space-around;
         gap: 2vw;
 
+        @media (max-width: $small) {
+            height: auto;
+            flex-direction: column;
+            gap: 8vw;
+        }
+
         .item {
             display: flex;
             flex-direction: column;
@@ -314,6 +453,10 @@ body {
                 background-size: cover;
                 background-repeat: no-repeat;
                 background-position: center;
+
+                @media (max-width: $small) {
+                    height: 20vh;
+                }
 
                 &#first {
                     background-image: url('../assets/coupe.png');
@@ -335,17 +478,29 @@ body {
                     padding: 10px;
                     font-family: lemonMilkTitle;
                     font-size: 0.8rem;
+
+                    @media (max-width: $small) {
+                        font-size: 0.8rem;
+                    }
                 }
             }
 
             .title {
                 font-family: lemonMilkTitle;
                 margin-bottom: 10px;
+
+                @media (max-width: $small) {
+                    font-size: 0.8rem;
+                }
             }
 
             .description {
                 margin-bottom: 20px;
                 font-size: 0.8rem;
+
+                @media (max-width: $small) {
+                    font-size: 0.6rem;
+                }
             }
 
             button {
@@ -371,6 +526,10 @@ body {
     padding: 3vh 20vw 7vh 20vw;
     background-color: #F0F0F0;
 
+    @media (max-width: $small) {
+        height: auto;
+    }
+
     .section_header {
         margin: 2vh 0 2vh 0;
         display: flex;
@@ -389,6 +548,10 @@ body {
             padding: 10px 0 10px 0;
             font-family: lemonMilkTitle;
             text-align: center;
+
+            @media (max-width: $small) {
+                font-size: 0.8rem;
+            }
         }
 
         .separator {
@@ -400,7 +563,7 @@ body {
         }
     }
 
-    .hexagoneu {
+    .hexagone_content {
         display: flex;
         --s: 190px;  /* size  */
         --m: 4px;    /* margin */
@@ -408,6 +571,10 @@ body {
         width: 60vw;
         margin-top: 50px;
         padding-bottom: 50px;
+
+        @media (max-width: $small) {
+            --s: 100px;
+        }
 
         .hexagones {
             font-size: 0;
@@ -434,7 +601,13 @@ body {
                 background-size: cover;
                 background-repeat: no-repeat;
                 background-position: center;
-                cursor: pointer;            
+                cursor: pointer;     
+                
+                &:last-child {
+                    @media (max-width: $small) {
+                        margin-bottom: 10px;
+                    }
+                }
 
                 .hover_hex {
                     display: none;
@@ -459,6 +632,10 @@ body {
                             top: 50%;
                             transform: translate(-50%, -50%);
                             left: 50%;
+
+                            @media (max-width: $small) {
+                                font-size: 0.6rem;
+                            }
 
                             .divider {
                                 height: 3px;
@@ -531,6 +708,11 @@ body {
     display: flex;
     justify-content: space-between;
 
+    @media (max-width: $small) {
+        font-size: 0.6rem;
+        height: 30vh;
+    }
+
     #documentation {
         display: flex;
         flex-direction: column;
@@ -544,6 +726,10 @@ body {
             padding: 10px 0 10px 0;
             font-family: lemonMilkTitle;
             text-align: center;
+
+            @media (max-width: $small) {
+                width: auto;
+            }
         }
 
         #item_list {
@@ -580,6 +766,10 @@ body {
             padding: 10px 0 10px 0;
             font-family: lemonMilkTitle;
             text-align: center;
+
+            @media (max-width: $small) {
+                width: auto;
+            }
         }
 
         #form {
@@ -594,6 +784,10 @@ body {
                 font-family: lemonMilkTitle;
                 padding: 10px 0 10px 10px;
                 border: none;
+
+                @media (max-width: $small) {
+                    font-size: 0.6rem;
+                }
             }
 
             .personnal_info {
@@ -602,12 +796,21 @@ body {
                 width: 100%;
                 gap: 0.5rem;
 
+                @media (max-width: $small) {
+                    flex-direction: column;
+                }
+
                 input {
                     background-color: white;
                     font-family: lemonMilkTitle;
                     padding: 10px 0 10px 10px;
                     width: 50%;
                     border: none;
+
+                    @media (max-width: $small) {
+                        width: auto;
+                        font-size: 0.6rem;
+                    }
                 }
             }
         }
@@ -620,6 +823,10 @@ body {
             font-family: lemonMilkTitle;
             text-align: center;
             cursor: pointer;
+
+            @media (max-width: $small) {
+                font-size: 0.6rem;
+            }
 
             &:hover {
                 background-color: #1AC5A1;
@@ -637,6 +844,14 @@ body {
     display: flex;
     justify-content: space-evenly;
 
+    @media (max-width: $small) {
+        height: auto;
+        padding: 2vh 20vw 2vh 20vw;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
     .social_network {
         display: flex;
         justify-content: space-between;
@@ -648,6 +863,11 @@ body {
         cursor: pointer;
         user-select: none;
 
+        @media (max-width: $small) {
+            width: 40%;
+            padding: 1vh 2.5% 1vh 2.5%;
+        }
+
         &:hover {
             background-color: #3A9AB3;
         }
@@ -658,6 +878,16 @@ body {
             border: solid 1px white;
             border-radius: 10px;
             padding: 5px;
+
+            @media (max-width: $small) {
+                font-size: 1rem;
+            }
+        }
+
+        .name {
+            @media (max-width: $small) {
+                font-size: 0.6rem;
+            }
         }
     }
 }
@@ -673,11 +903,23 @@ body {
     justify-content: center;
     overflow: hidden;
 
+    @media (max-width: $small) {
+        font-size: 0.6rem;
+        height: 90vh;
+        padding: 0 15vw 0 15vw;
+        width: 70vw;
+    }
+
     .section_list {
         display: flex;
         justify-content: space-between;
         gap: 1rem;
         height: 64%;
+
+        @media (max-width: $small) {
+            flex-wrap: wrap;
+            height: 70%;
+        }
 
         .section {
             width: 100%;
@@ -685,6 +927,11 @@ body {
             display: flex;
             flex-direction: column;
             justify-content: space-evenly;
+
+            @media (max-width: $small) {
+                width: auto;
+                height: auto;
+            }
             
             .title {
                 font-family: lemonMilkTitle;
@@ -696,12 +943,22 @@ body {
                 flex-direction: column;
             }
 
+            &:has(> .button) {
+                @media (max-width: $small) {
+                    width: 100%;
+                }
+            }
+
             .button {
                 height: 100%;
                 width: 80%;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
+
+                @media (max-width: $small) {
+                    width: 100%;
+                }
 
                 button {
                     background-color: transparent;
@@ -715,6 +972,12 @@ body {
                         background-color: white;
                         color: #343635;
                     }
+                }
+            }
+
+            &:has(> .thumbnails) {
+                @media (max-width: $small) {
+                    width: 100%;
                 }
             }
 
@@ -766,6 +1029,10 @@ body {
                 gap: 0.8rem;
                 height: 100%;
                 cursor: pointer;
+
+                @media (max-width: $small) {
+                    font-size: 0.6rem;
+                }
             }
         }
     }

@@ -8,28 +8,42 @@
   @vite(['resources/css/app.scss', 'resources/js/app.js'])
 </head>
 <body>
+  <div id="menu_items">
+    <div class="items">
+      <li class="menu_item">Introduction</li>
+      <li class="menu_item">Boutique</li>
+      <li class="menu_item">Partenaires</li>
+      <li class="menu_item">L'équipe</li>
+    </div>
+  </div>
+
   <div id="header">
+    <div id="dropdown_icon">
+      @svg('ph:list')
+    </div>
     <div id="logo"></div>
-    <div id="social_networks">
+    <div id="contacts">
       <div id="mail">
         @svg('ph:mailbox-fill')
         Contactez-nous
       </div>
-      <div id="facebook">
-        @svg('ph:facebook-logo-fill')
-      </div>
-      <div id="linkedin">
-        @svg('ph:linkedin-logo-fill')
-      </div>
-      <div id="twitter">
-        @svg('ph:twitter-logo-fill')
-      </div>
-      <div id="tumblr">
-        @svg('ph:tumblr-logo-fill')
-      </div>
-      <div id="youtube">
-        @svg('ph:youtube-logo-fill')
-      </div>        
+      <div id="social_networks">
+        <div id="facebook">
+          @svg('ph:facebook-logo-fill')
+        </div>
+        <div id="linkedin">
+          @svg('ph:linkedin-logo-fill')
+        </div>
+        <div id="twitter">
+          @svg('ph:twitter-logo-fill')
+        </div>
+        <div id="tumblr">
+          @svg('ph:tumblr-logo-fill')
+        </div>
+        <div id="youtube">
+          @svg('ph:youtube-logo-fill')
+        </div>
+      </div>   
     </div>
   </div>
 
@@ -110,7 +124,7 @@
       <div class="title">les jeux de sociétés</div>
       <div class="separator"></div>
     </div>
-    <div class="hexagoneu">
+    <div class="hexagone_content">
       <div class="hexagones">
         <div class="hexagone" id="boardgame1">
           <div class="hover_hex">
