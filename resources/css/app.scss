@@ -1,5 +1,14 @@
 $small: 480px;
 
+$blue: #5EB4D7;
+$green: #1AC5A1;
+$green_low_opacity: #1ac5a0be;
+$dark_gray: #343635;
+
+$hexagone_size: 190px;
+$hexagon_margin: 4px;
+$hexagon_shape_outside: calc(1.732 * $hexagone_size + 4 * $hexagon_margin  - 1px);
+
 * {
     margin: 0;
     padding: 0;
@@ -141,7 +150,7 @@ body {
             }
 
             #linkedin {
-                color: #1CC4A1;
+                color: $green;
                 cursor: pointer;
                 
                 @media (max-width: $small) {
@@ -220,8 +229,8 @@ body {
                 user-select: none;
 
                 &.active {
-                    color: #1AC5A1;
-                    border-left: solid 5px #1AC5A1;
+                    color: $green;
+                    border-left: solid 5px $green;
                     padding-left: 10px;
                 }
             }
@@ -287,7 +296,7 @@ body {
             align-self: center;
             color: white;
             flex-grow: 1;
-            background-color: #1AC5A1;
+            background-color: $green;
             width: 150px;
             padding: 10px 0 10px 0;
             font-family: lemonMilkTitle;
@@ -301,7 +310,7 @@ body {
         .separator {
             height: 1px;
             width: 100%;
-            background-color: #1ac5a0be;
+            background-color: $green_low_opacity;
             flex-grow: 2;
             margin-left: 20px;
         }
@@ -312,7 +321,8 @@ body {
         height: 30vh;
         display: flex;
         justify-content: space-around;
-        gap: 2vw;
+        gap: 2vw;    
+        align-items: center;
 
         @media (max-width: $small) {
             flex-direction: column;
@@ -348,7 +358,7 @@ body {
                 user-select: none;
 
                 .date {
-                    background-color: #1AC5A1;
+                    background-color: $green;
                     width: fit-content;
                     padding: 5px 20px 5px 20px;
 
@@ -370,10 +380,15 @@ body {
 
         .content {
             width: 50%;
-            height: 100%;
+            height: fit-content;
             overflow: hidden;
             text-align: justify;
             font-size: 0.8rem;
+            text-wrap: balance;    
+            display: -webkit-box;
+            -webkit-line-clamp: 15;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
 
             @media (max-width: $small) {
                 width: 100%;
@@ -411,7 +426,7 @@ body {
             align-self: center;
             color: white;
             flex-grow: 1;
-            background-color: #1AC5A1;
+            background-color: $green;
             width: 150px;
             padding: 10px 0 10px 0;
             font-family: lemonMilkTitle;
@@ -424,7 +439,7 @@ body {
         .separator {
             height: 1px;
             width: 100%;
-            background-color: #1ac5a0be;
+            background-color: $green_low_opacity;
             flex-grow: 2;
             margin-left: 20px;
         }
@@ -459,7 +474,7 @@ body {
                 }
 
                 &#first {
-                    background-image: url('../assets/coupe.png');
+                    background-image: url('../assets/cup.png');
                 }
 
                 &#second {
@@ -506,15 +521,15 @@ body {
             button {
                 width: fit-content;
                 padding: 8px;
-                border: solid 2px #1AC5A1;
-                color: #1AC5A1;
+                border: solid 2px $green;
+                color: $green;
                 cursor: pointer;
                 font-family: lemonMilkTitle;
                 background-color: transparent;
 
                 &:hover {
                     color: white;
-                    background-color: #1AC5A1;
+                    background-color: $green;
                 }
             }
         }
@@ -543,7 +558,7 @@ body {
             align-self: center;
             color: white;
             flex-grow: 1;
-            background-color: #1AC5A1;
+            background-color: $green;
             width: 250px;
             padding: 10px 0 10px 0;
             font-family: lemonMilkTitle;
@@ -557,7 +572,7 @@ body {
         .separator {
             height: 1px;
             width: 100%;
-            background-color: #1ac5a0be;
+            background-color: $green_low_opacity;
             flex-grow: 2;
             margin-left: 20px;
         }
@@ -565,15 +580,12 @@ body {
 
     .hexagone_content {
         display: flex;
-        --s: 190px;  /* size  */
-        --m: 4px;    /* margin */
-        --f: calc(1.732 * var(--s) + 4 * var(--m)  - 1px);
         width: 60vw;
         margin-top: 50px;
         padding-bottom: 50px;
 
         @media (max-width: $small) {
-            --s: 100px;
+            $hexagone_size: 100px;
         }
 
         .hexagones {
@@ -581,23 +593,23 @@ body {
 
             &::before {
                 content: "";
-                width: calc(var(--s)/2 + var(--m));
+                width: calc($hexagone_size/2 + $hexagon_margin);
                 float: left;
                 height: 120%;
                 shape-outside: repeating-linear-gradient(     
-                                #0000 0 calc(var(--f) - 3px),      
-                                #000  0 var(--f));
+                                #0000 0 calc($hexagon_shape_outside - 3px),      
+                                #000  0 $hexagon_shape_outside);
             }  
 
             .hexagone {
                 user-select: none;
-                width: var(--s);
-                margin: var(--m);
-                height: calc(var(--s)*1.1547); 
+                width: $hexagone_size;
+                margin: $hexagon_margin;
+                height: calc($hexagone_size*1.1547); 
                 display: inline-block;
-                font-size:initial;
+                font-size: initial;
                 clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%);
-                margin-bottom: calc(var(--m) - var(--s)*0.2885); 
+                margin-bottom: calc($hexagon_margin - $hexagone_size*0.2885); 
                 background-size: cover;
                 background-repeat: no-repeat;
                 background-position: center;
@@ -650,7 +662,7 @@ body {
                         }
             
                         .background {
-                            background-color: #1AC5A1;
+                            background-color: $green;
                             width: 100%;
                             height: 100%;
                             opacity: 0.5;
@@ -720,7 +732,7 @@ body {
         width: 70%;
 
         .title {
-            background-color: #5EB4D7;
+            background-color: $blue;
             color: white;
             width: 180px;
             padding: 10px 0 10px 0;
@@ -746,7 +758,7 @@ body {
 
                 .icon {
                     font-size: 3rem;
-                    color: #1AC5A1;
+                    color: $green;
                     display: flex;
                 }
             }
@@ -760,7 +772,7 @@ body {
         width: 30%;
         
         .title {
-            background-color: #5EB4D7;
+            background-color: $blue;
             color: white;
             width: 150px;
             padding: 10px 0 10px 0;
@@ -817,8 +829,8 @@ body {
 
         button {
             background-color: transparent;
-            color: #1AC5A1;
-            border: solid 2px #1AC5A1;
+            color: $green;
+            border: solid 2px $green;
             padding: 10px 0 10px 0;
             font-family: lemonMilkTitle;
             text-align: center;
@@ -829,7 +841,7 @@ body {
             }
 
             &:hover {
-                background-color: #1AC5A1;
+                background-color: $green;
                 color: #E2E2E2;
             }
         }
@@ -896,7 +908,7 @@ body {
     width: 60vw;
     height: 30vh;
     padding: 0 20vw 0 20vw;
-    background-color: #343635;
+    background-color: $dark_gray;
     color: white;
     display: flex;
     flex-direction: column;
@@ -970,7 +982,7 @@ body {
 
                     &:hover {
                         background-color: white;
-                        color: #343635;
+                        color: $dark_gray;
                     }
                 }
             }
@@ -1008,7 +1020,7 @@ body {
             .divider {
                 width: 30px;
                 height: 3px;
-                background-color: #1AC5A1;
+                background-color: $green;
                 margin: 5px 0 20px 0;
             }
 

@@ -96,26 +96,18 @@
       <div class="separator"></div>
     </div>
     <div class="item_group">
-      <div class="item">
-        <div class="image" id="first"></div>
-        <div class="tag_group">
-          <div class="tags">29/07/2023</div>
-          <div class="tags">actualités</div>
+      @each((news, index) in newsList)
+        <div class="item">
+          <div class="image" id="{{index == 0 ? 'first' : 'second'}}"></div>
+          <div class="tag_group">
+            <div class="tags">{{news.date_formated}}</div>
+            <div class="tags">actualités</div>
+          </div>
+          <div class="title">{{news.title}}</div>
+          <div class="description">{{news.description}}</div>
+          <button type="button">lire plus</button>
         </div>
-        <div class="title">Lancement du prix "as d'or" de l'année</div>
-        <div class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque ex mi, sit amet euismod arcu gravida eget. In tempor orci a pulvinar varius. Suspendisse a consequat tellus. Sed lectus lectus, molestie fringilla tempor at, facilisis sed purus. Aliquam eleifend nibh consectetur purus pulvinar fermentum. Nulla quis volutpat tortor. Phasellus egestas lectus eu massa varius sagittis. Duis sit amet lorem id metus sodales luctus ac sed elit</div>
-        <button type="button">lire plus</button>
-      </div>
-      <div class="item">
-        <div class="image" id="second"></div>
-        <div class="tag_group">
-          <div class="tags">18/02/2024</div>
-          <div class="tags">actualités</div>
-        </div>
-        <div class="title">gros succes pour "cascadia"</div>
-        <div class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque ex mi, sit amet euismod arcu gravida eget. In tempor orci a pulvinar varius. Suspendisse a consequat tellus. Sed lectus lectus, molestie fringilla tempor at, facilisis sed purus. Aliquam eleifend nibh consectetur purus pulvinar fermentum. Nulla quis volutpat tortor. Phasellus egestas lectus eu massa varius sagittis. Duis sit amet lorem id metus sodales luctus ac sed elit</div>
-        <button type="button">lire plus</button>
-      </div>
+      @end
     </div>
   </div>
 

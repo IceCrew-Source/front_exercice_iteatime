@@ -2,10 +2,11 @@ import env from '#start/env'
 import { defineConfig } from '@adonisjs/lucid'
 
 const dbConfig = defineConfig({
-  connection: 'mysql',
+  connection: 'postgres',
   connections: {
-    mysql: {
-      client: 'mysql2',
+    postgres: {
+      client: 'pg',
+      healthCheck: true,
       connection: {
         host: env.get('DB_HOST'),
         port: env.get('DB_PORT'),
