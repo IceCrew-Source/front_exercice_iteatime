@@ -29,6 +29,7 @@ $hexagon_shape_outside: calc(1.732 * $hexagone_size + 4 * $hexagon_margin  - 1px
 body {
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
 }
 
 #menu_items {

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> AdonisJS - A fully featured web framework for Node.js </title>
+  <title> front exercice iteatime </title>
 
   @vite(['resources/css/app.scss', 'resources/js/app.js'])
 </head>
@@ -72,20 +72,20 @@
       <div class="title">à la une</div>
       <div class="separator"></div>
     </div>
-    <div class="item">
-      <div class="image">
-        <div class="background_image"></div>
-        <div class="description">
-          <div class="date">22 Juillet 2016</div>
-          <div class="title">expo<br>jeux<br>lyon</div>
+    @each(spotlight in spotlightsList)
+      <div class="item">
+        <div class="image">
+          <div class="background_image"></div>
+          <div class="description">
+            <div class="date">{{spotlight.date_formated}}</div>
+            <div class="title">{{html.safe(spotlight.title)}}</div>
+          </div>
+        </div>
+        <div class="content">
+          {{spotlight.description}}
         </div>
       </div>
-      <div class="content">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque ex mi, sit amet euismod arcu gravida eget. In tempor orci a pulvinar varius. Suspendisse a consequat tellus. Sed lectus lectus, molestie fringilla tempor at, facilisis sed purus. Aliquam eleifend nibh consectetur purus pulvinar fermentum. Nulla quis volutpat tortor. Phasellus egestas lectus eu massa varius sagittis. Duis sit amet lorem id metus sodales luctus ac sed elit.
-        Quisque elementum rhoncus nisi, at ullamcorper odio vestibulum ut. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sollicitudin et sapien et pulvinar. Aliquam vel tristique leo, a iaculis metus. Fusce erat nibh, imperdiet in consequat vestibulum, dictum non elit. Cras vestibulum elit vitae dictum vulputate. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec hendrerit neque ac leo scelerisque, in lacinia dolor scelerisque. Nam diam tortor, aliquet tristique nunc eget, efficitur placerat ipsum. Praesent vel tempus orci. Quisque eleifend placerat tellus, in porta nisl scelerisque et.
-        Fusce nulla nibh, pulvinar eu risus in, ornare ornare nunc. Phasellus tempus mi et urna dictum gravida. Vivamus maximus nec velit at egestas. Sed ultrices dictum ex ac laoreet. Duis vitae ultrices nunc. Sed pretium nunc nisl, sit amet accumsan augue volutpat eu. Quisque lobortis luctus nulla, non ultricies orci suscipit sed. Curabitur id fermentum neque. Ut eu porta quam, et auctor turpis. Fusce ante nunc, blandit in feugiat vel, aliquam sit amet nisi. Etiam in lectus porttitor, ultricies sem id, interdum ante. Morbi imperdiet dictum lorem. Phasellus pharetra diam eu faucibus congue. Morbi nec nisi non odio sodales malesuada at a ex. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</div>
-      </div>
-    </div>
+    @end
   </div>
 
   <div id="paralax"></div>
